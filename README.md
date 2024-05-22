@@ -8,4 +8,4 @@ Proyek manajemen database ini bertujuan untuk menghilangkan antrian panjang, men
   * Manajemen Inventaris: Sistem dapat mengelola inventaris kantin, melacak item makanan dan bahan-bahan.
  
 ## Alur program
-Program ini berjalan dengan sistem login based, dimana terdapat user dan admin (pemilik kantin). User/civitas akademika kampus dapat memilih kantin serta menu makanan yg tersedia . Pada sisi pemilik kantin memiliki akun berbeda, yang bisa mengedit database, seperti menghapus data orderan yang sudah selesai serta melacak aset bahan dan resep untuk mengurangi kekurangan makanan.
+Program ini berjalan dengan sistem login based, dimana terdapat user dan admin (pemilik kantin). User/civitas akademika kampus dapat memilih kantin serta menu makanan yg tersedia. Pada sisi pemilik kantin memiliki akun berbeda, yang bisa mengedit database, seperti menghapus data orderan yang sudah selesai serta melacak aset bahan dan resep untuk mengurangi kekurangan makanan.
