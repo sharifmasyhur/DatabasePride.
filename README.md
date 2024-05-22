@@ -1,6 +1,6 @@
 # QuickCanteen
 
-Proyek manajemen database ini bertujuan untuk menghilangkan antrian panjang, menghemat waktu mahasiswa antar kelas atau saat istirahat. mengembangkan situs web kantin kampus yang ramah pengguna yang memungkinkan mahasiswa memesan makanan secara online dimanapun dan mengambilnya dengan nyaman tanpa perlu mengantri lama-lama.
+Proyek manajemen database ini bertujuan untuk menghilangkan antrian panjang, menghemat waktu mahasiswa antar kelas atau saat istirahat. Mengembangkan situs web kantin kampus yang ramah pengguna yang memungkinkan mahasiswa memesan makanan secara online dimanapun dan mengambilnya dengan nyaman tanpa perlu mengantri lama-lama.
 
 ## Fitur
   * Pemesanan dan Pembayaran: Interface yang ramah pengguna memungkinkan siswa memesan dan membayar makanan mereka menggunakan gateway pembayaran terintegrasi.
