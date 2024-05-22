@@ -1,2 +1,1 @@
-# halo
-modul 1
+# QuickCanteen
