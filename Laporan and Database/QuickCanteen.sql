@@ -1,7 +1,7 @@
 CREATE DATABASE APP;
 USE APP;
 
-CREATE TYPE status AS ENUM ('Waiting', 'Preparing', 'Ready');
+CREATE TYPE public.status AS ENUM ('Waiting', 'Preparing', 'Ready');
 
 CREATE TABLE User(
 userEmail varchar(50) PRIMARY KEY,
@@ -32,5 +32,5 @@ orderId integer PRIMARY KEY,
 userEmail varchar(50) FOREIGN KEY,
 menuId integer FOREIGN KEY,
 pickUp_time date NOT NULL,
-orderStatus status NOT NULL
+orderStatus public.status NOT NULL
 );
