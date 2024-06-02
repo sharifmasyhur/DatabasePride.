@@ -1,5 +1,5 @@
 import React from "react";
-import MultiplePizzas from "../assets/multiplePizzas.jpeg";
+import MultiplePizzas from "../assets/canteenwallpaper.jpg";
 import "../styles/About.css";
 function About() {
   return (

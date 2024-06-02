@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BannerImage from "../assets/QuickCanteenLogo.png";
+import Wallpaper from "../assets/Wallpaper.jpg";
 import "../styles/Home.css";
 
 function Home() {
   return (
-    <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
+    <div className="home" style={{ backgroundImage: `url(${Wallpaper})` }}>
       <div className="headerContainer">
-        <h1> QuickCanteen </h1>
-        <p> Order Anywhere With Ease. </p>
+        <h1>QuickCanteen </h1>
+        <p>Order Anywhere With Ease. </p>
         <Link to="/menu">
           <button> ORDER NOW </button>
         </Link>
