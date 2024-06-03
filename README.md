@@ -26,15 +26,12 @@ npm run start
 
 ## Dokumentasi dan Laporan
 ### Flowchart Seller
-
 ![Flowchart_QuickCanteen_Seller](https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-/assets/144346489/99b13901-c3b3-4bda-ac22-5cf658fb3c6b)
 
 ### Flowchart User
-
 ![Flowchart_QuickCanteen_User](https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-/assets/144346489/9ac83ad9-8b8d-489f-9823-0853da00ca83)
 
 ### ERD Project
-
 ![ERD_QuickCanteen](https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-/assets/144346489/d14bed1a-b052-45ef-b109-ce716e7e9284)
 
 ## Contributors
