@@ -11,13 +11,14 @@ Program ini berjalan dengan sistem login based, dimana terdapat user dan admin (
 
 ## Try our Program
 ### Frontend
-Clone the follow repo
+Follow the steps carefully.
 ```
 cd Frontend
 npm install
 npm run dev
 ```
 ### Backend
+Same for Backend.
 ```
 cd Backend
 npm install
