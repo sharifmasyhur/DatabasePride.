@@ -10,6 +10,10 @@ Proyek manajemen database ini bertujuan untuk menghilangkan antrian panjang, men
 Program ini berjalan dengan sistem login based, dimana terdapat user dan admin (pemilik kantin). User/civitas akademika kampus dapat memilih kantin serta menu makanan yg tersedia. Pada sisi pemilik kantin memiliki akun berbeda, yang bisa mengedit database, seperti menghapus data orderan yang sudah selesai serta melacak aset bahan dan resep untuk mengurangi kekurangan makanan.
 
 ## Try our Program
+Try to clone our repo
+```
+git clone https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-.git
+```
 ### Frontend
 Follow the steps carefully.
 ```
@@ -18,7 +22,7 @@ npm install
 npm run dev
 ```
 ### Backend
-Same for Backend.
+Same for Backend
 ```
 cd Backend
 npm install
