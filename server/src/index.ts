@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
+import pg from "pg";
 import myUserRoute from "./routes/MyUserRoute";
 import { v2 as cloudinary } from "cloudinary";
 import myCanteenRoute from "./routes/MyCanteenRoute";
@@ -25,6 +26,21 @@ app.use(cors());
 app.use("/api/order/checkout/webhook", express.raw({ type: "*/*" }));
 
 app.use(express.json());
+
+const pool = new pg.Pool({
+  user: "raditdb_owner",
+  password: "sjCFz3eLy5Nl",
+  host: "ep-withered-mouse-a16a68e6.ap-southeast-1.aws.neon.tech",
+  port: 5432,
+  database: "radit_8",
+});
+
+pool.connect()
+  .then(client => {
+    console.log('Connected to database!');
+    client.release();
+  })
+  .catch(err => console.error('Unable to connect to the database:', err));
 
 app.get("/health", async (req: Request, res: Response) => {
   res.send({ message: "health OK!" });

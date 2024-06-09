@@ -17,14 +17,14 @@ CREATE TABLE users (
 );
 --membuat tabel item kelengkapan menu
 CREATE TABLE menu_items (
-    id SERIAL PRIMARY KEY,
+    menuId SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price NUMERIC(10, 2) NOT NULL
 );
 
 --membuat tabel daftar kantin
 CREATE TABLE canteens (
-    id SERIAL PRIMARY KEY,
+    canteenId SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id),
     canteen_name VARCHAR(255) NOT NULL,
     faculty VARCHAR(100),
@@ -38,7 +38,7 @@ CREATE TABLE canteens (
 
 --membuat tabel keterangan tiap order
 CREATE TABLE orders (
-    id SERIAL PRIMARY KEY,
+    orderId SERIAL PRIMARY KEY,
     canteen_id INT REFERENCES canteens(id),
     user_id INT REFERENCES users(id),
     total_amount NUMERIC(10, 2),
