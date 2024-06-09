@@ -1,7 +1,7 @@
 CREATE DATABASE APP;
 USE APP;
 
-CREATE TYPE public.status AS ENUM ('Waiting', 'Preparing', 'Ready');
+CREATE TYPE public.OrderStatus AS ENUM ('placed', 'paid', 'inProgress', 'outForDelivery', 'delivered');
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -11,7 +11,6 @@ CREATE TABLE users (
     faculty VARCHAR(100),
     cluster VARCHAR(100)
 );
-
 
 CREATE TABLE menu_items (
     id SERIAL PRIMARY KEY,
@@ -45,7 +44,7 @@ CREATE TABLE orders (
     canteen_id INT REFERENCES canteens(id),
     user_id INT REFERENCES users(id),
     total_amount NUMERIC(10, 2),
-    status VARCHAR(20) CHECK (status IN ('placed', 'paid', 'inProgress', 'outForDelivery', 'delivered')),
+    status VARCHAR(20) public.OrderStatus NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
