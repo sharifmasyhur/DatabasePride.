@@ -14,19 +14,19 @@ Try to clone our repo
 ```
 git clone https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-.git
 ```
-### Frontend
+### Client
 Follow the steps carefully.
 ```
-cd Frontend
+cd client
 npm install
 npm run dev
 ```
-### Backend
-Same for Backend
+### Server
+Same for Server
 ```
-cd Backend
+cd cerver
 npm install
-npm run start
+npm run dev
 ```
 
 ## Dokumentasi dan Laporan

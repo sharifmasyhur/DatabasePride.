@@ -1,4 +1,4 @@
-import landingImage from "../assets/landing.png";
+import landingImage from "../assets/map_quickcanteen.png";
 import appDownloadImage from "../assets/appDownload.png";
 import SearchBar, { SearchForm } from "@/components/SearchBar";
 import { useNavigate } from "react-router-dom";
@@ -16,9 +16,9 @@ const HomePage = () => {
     <div className="flex flex-col gap-12">
       <div className="md:px-32 bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center -mt-16">
         <h1 className="text-5xl font-bold tracking-tight text-yellow-600">
-          Tuck into a takeway today
+          Order your food in a simple click.
         </h1>
-        <span className="text-xl">Food is just a click away!</span>
+        <span className="text-xl">Don't miss it out!</span>
         <SearchBar
           placeHolder="Search your Local Canteen in Campus"
           onSubmit={handleSearchSubmit}
@@ -28,11 +28,10 @@ const HomePage = () => {
         <img src={landingImage} />
         <div className="flex flex-col items-center justify-center gap-4 text-center">
           <span className="font-bold text-3xl tracking-tighter">
-            Order takeaway even faster!
+            Check in Your Local Area!
           </span>
           <span>
-            Download the MernEats App for faster ordering and personalised
-            recommendations
+            Come also Checkout Our Application.
           </span>
           <img src={appDownloadImage} />
         </div>
