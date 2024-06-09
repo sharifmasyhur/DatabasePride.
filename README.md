@@ -4,6 +4,13 @@ Proyek manajemen database ini bertujuan untuk menghilangkan antrian panjang, men
 ## Web Overview
 ![image](https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-/assets/144346489/10529c75-7905-422d-b78f-59f74a749ec8)
 
+![image](https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-/assets/144346489/27db89d6-e131-47ad-af3a-424477238f55)
+
+![image](https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-/assets/144346489/7c667501-120f-4afb-a1f8-d947c28d3677)
+
+![image](https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-/assets/144346489/3dd1857e-0e12-4df0-840a-e05cf585e390)
+
+
 ## Features
   * Pemesanan dan Pembayaran: Interface yang ramah pengguna memungkinkan siswa memesan dan membayar makanan mereka menggunakan gateway pembayaran terintegrasi.
   * Pelacakan Pesanan: Mahasiswa (user) dapat melacak status pesanan mereka secara real-time, memungkinkan mereka tiba di kantin tepat ketika makanan sudah siap.
