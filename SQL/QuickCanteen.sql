@@ -6,7 +6,7 @@ CREATE TYPE public.OrderStatus AS ENUM ('placed', 'paid', 'inProgress', 'outForD
 CREATE TYPE public.Cluster AS ENUM ('Saintek', 'Soshum');
 
 CREATE TYPE public.cuisines AS ENUM ('Indonesian', 'BBQ', 'Breakfast', 'Burgers', 'Cafe', 'Batagor', 'Desserts', 'Siomay', 'Bakmi', 'Healthy', 'Curry', 'Chicken Katsu', 'Ice Cream', 'Soto', 'Noodles', 'Organic', 'Pasta', 'Pizza', 'Salads', 'Seafood', 'Beef', 'Sushi', 'Beverages', 'Drinks', 'Kebab');
-
+--membuat tabel user
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) UNIQUE NOT NULL,
@@ -15,14 +15,14 @@ CREATE TABLE users (
     faculty VARCHAR(100),
     cluster public.Cluster
 );
-
+--membuat tabel item kelengkapan menu
 CREATE TABLE menu_items (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price NUMERIC(10, 2) NOT NULL
 );
 
-
+--membuat tabel daftar kantin
 CREATE TABLE canteens (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id),
@@ -36,13 +36,13 @@ CREATE TABLE canteens (
     last_updated TIMESTAMP
 );
 
-
+--membuat tabel keseluruhan menu
 CREATE TABLE menu_List(
 menuId varchar(50) PRIMARY KEY,
 canteenId varchar(50) FOREIGN KEY,
 Password varchar(30) NOT NULL
 );
-
+--membuat tabel keterangan tiap order
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     canteen_id INT REFERENCES canteens(id),
@@ -51,7 +51,7 @@ CREATE TABLE orders (
     status VARCHAR(20) public.OrderStatus NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+--membuat tabel item order
 CREATE TABLE order_items (
     order_id INT REFERENCES orders(id),
     menu_item_id INT REFERENCES menu_items(id),
@@ -59,7 +59,7 @@ CREATE TABLE order_items (
     quantity INT,
     PRIMARY KEY (order_id, menu_item_id)
 );
-
+--membuat tabel keterangan delivery
 CREATE TABLE delivery_details (
     order_id INT REFERENCES orders(id) PRIMARY KEY,
     name VARCHAR(255),
@@ -67,7 +67,7 @@ CREATE TABLE delivery_details (
     faculty VARCHAR(100),
     email VARCHAR(255)
 );
-
+--data dummy
 INSERT INTO users (email, name, npm, faculty, cluster)
 VALUES ('shareefmasyhur@gmail.com', 'sharif', '2206063014', 'Engineering', 'Science');
 
@@ -79,37 +79,6 @@ VALUES ('test', 10000);
 
 INSERT INTO canteens (user_id, canteen_name, faculty, cluster, delivery_price, estimated_delivery_time, cuisines, image_url, last_updated)
 VALUES (1, 'Test', 'Engineering', 'Science', 5000.00, 21, ARRAY['Indonesian', 'Western'], 'http://res.cloudinary.com/dxkg4akpi/image/upload/v1717866068/qamoxomsq…', CURRENT_TIMESTAMP);
-
--- Menghapus menu item dari kantin
-DELETE FROM canteen_menu_items
-WHERE canteen_id = 2 AND menu_item_id = 3;
-
-DROP TABLE IF EXISTS orders CASCADE;
-
--- Menampilkan semua pengguna
-SELECT * FROM users;
-
--- Menampilkan semua item menu untuk kantin tertentu
-SELECT mi.*
-FROM menu_items mi
-JOIN canteen_menu_items cmi ON mi.id = cmi.menu_item_id
-WHERE cmi.canteen_id = 2;
-
--- Menampilkan semua pesanan dengan status 'placed'
-SELECT * FROM orders
-WHERE status = 'placed';
-
--- Menampilkan detail pesanan bersama dengan informasi kantin dan pengguna
-SELECT o.id AS order_id, u.name AS user_name, c.canteen_name, o.total_amount, o.status, o.created_at
-FROM orders o
-JOIN users u ON o.user_id = u.id
-JOIN canteens c ON o.canteen_id = c.id;
-
--- Menampilkan semua menu item yang tersedia di setiap kantin
-SELECT c.canteen_name, mi.name AS menu_item_name, mi.price
-FROM canteens c
-JOIN canteen_menu_items cmi ON c.id = cmi.canteen_id
-JOIN menu_items mi ON cmi.menu_item_id = mi.id;
 
 -- Menambahkan data kantin baru
 INSERT INTO public.canteens (id, canteen_name, city, country, delivery_price, estimated_delivery_time, cuisines, image_url, user_id, last_updated, cluster, faculty)
