@@ -1,0 +1,73 @@
+import pool from '../index.ts'
+
+const register = async (req, res) => {
+    const { userEmail, name, password } = req.body;
+    const q = "INSERT INTO account(userEmail, name, password) VALUES ($1, $2, $3)";
+    const values = [userEmail, name, password];
+  
+    pool.query(q, values, (err, result) => {
+      if (err) {
+        console.error("Error executing query", err.stack);
+        return res.status(500).json(err);
+      }
+      return res.json(result.rows);
+    });
+  };
+
+  const login = async (req, res) => {
+    const { userEmail, password } = req.body;
+    const q = "SELECT * FROM account WHERE userEmail = $1 AND password = $2";
+    const values = [userEmail, password];
+  
+    pool.query(q, values, (err, result) => {
+      if (err) {
+        console.error("Error executing query", err.stack);
+        return res.status(500).json(err);
+      }
+      return res.json(result.rows);
+    });
+  };
+
+  const show_canteen =  (req, res) => {
+    const faculty = req.params.id;
+    const q = "SELECT * FROM canteen WHERE faculty = $1";
+    pool.query(q, [faculty], (err, result) => {
+      if (err) {
+        console.error("Error executing query", err.stack);
+        return res.status(500).json(err);
+      }
+      return res.json(result.rows);
+    });
+  };
+
+  const canteen =  (req, res) => {
+    const canteenId = req.params.id;
+    const q = "SELECT * FROM menu WHERE canteenId = $1";
+    pool.query(q, [canteenId], (err, result) => {
+      if (err) {
+        console.error("Error executing query", err.stack);
+        return res.status(500).json(err);
+      }
+      return res.json(result.rows);
+    });
+  };
+
+  const order = async (req, res) => {
+    const { userEmail } = req.body;
+    const q = "SELECT * FROM orders WHERE userEmail = $1";
+    const values = [userEmail];
+  
+    pool.query(q, values, (err, result) => {
+      if (err) {
+        console.error("Error executing query", err.stack);
+        return res.status(500).json(err);
+      }
+      return res.json(result.rows);
+    });
+  };
+
+  
+
+
+  
+
