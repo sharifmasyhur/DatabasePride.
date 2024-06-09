@@ -36,12 +36,6 @@ CREATE TABLE canteens (
     last_updated TIMESTAMP
 );
 
---membuat tabel keseluruhan menu
-CREATE TABLE menu_List(
-menuId varchar(50) PRIMARY KEY,
-canteenId varchar(50) FOREIGN KEY,
-Password varchar(30) NOT NULL
-);
 --membuat tabel keterangan tiap order
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
@@ -51,14 +45,7 @@ CREATE TABLE orders (
     status VARCHAR(20) public.OrderStatus NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
---membuat tabel item order
-CREATE TABLE order_items (
-    order_id INT REFERENCES orders(id),
-    menu_item_id INT REFERENCES menu_items(id),
-    name VARCHAR(255),
-    quantity INT,
-    PRIMARY KEY (order_id, menu_item_id)
-);
+
 --membuat tabel keterangan delivery
 CREATE TABLE delivery_details (
     order_id INT REFERENCES orders(id) PRIMARY KEY,
