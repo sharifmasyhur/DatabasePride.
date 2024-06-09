@@ -17,14 +17,14 @@ CREATE TABLE users (
 );
 --membuat tabel item kelengkapan menu
 CREATE TABLE menu_items (
-    id SERIAL PRIMARY KEY,
+    menuId SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price NUMERIC(10, 2) NOT NULL
 );
 
 --membuat tabel daftar kantin
 CREATE TABLE canteens (
-    id SERIAL PRIMARY KEY,
+    canteenId SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id),
     canteen_name VARCHAR(255) NOT NULL,
     faculty VARCHAR(100),
@@ -36,29 +36,16 @@ CREATE TABLE canteens (
     last_updated TIMESTAMP
 );
 
---membuat tabel keseluruhan menu
-CREATE TABLE menu_List(
-menuId varchar(50) PRIMARY KEY,
-canteenId varchar(50) FOREIGN KEY,
-Password varchar(30) NOT NULL
-);
 --membuat tabel keterangan tiap order
 CREATE TABLE orders (
-    id SERIAL PRIMARY KEY,
+    orderId SERIAL PRIMARY KEY,
     canteen_id INT REFERENCES canteens(id),
     user_id INT REFERENCES users(id),
     total_amount NUMERIC(10, 2),
     status VARCHAR(20) public.OrderStatus NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
---membuat tabel item order
-CREATE TABLE order_items (
-    order_id INT REFERENCES orders(id),
-    menu_item_id INT REFERENCES menu_items(id),
-    name VARCHAR(255),
-    quantity INT,
-    PRIMARY KEY (order_id, menu_item_id)
-);
+
 --membuat tabel keterangan delivery
 CREATE TABLE delivery_details (
     order_id INT REFERENCES orders(id) PRIMARY KEY,
