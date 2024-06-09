@@ -3,7 +3,7 @@ Proyek manajemen database ini bertujuan untuk menghilangkan antrian panjang, men
 
 ## Fitur
   * Pemesanan dan Pembayaran: Interface yang ramah pengguna memungkinkan siswa memesan dan membayar makanan mereka menggunakan gateway pembayaran terintegrasi.
-  * Pelacakan Pesanan: Siswa dapat melacak status pesanan mereka secara real-time, memungkinkan mereka tiba di kantin tepat ketika makanan sudah siap.
+  * Pelacakan Pesanan: Mahasiswa (user) dapat melacak status pesanan mereka secara real-time, memungkinkan mereka tiba di kantin tepat ketika makanan sudah siap.
   * Manajemen Inventaris: Sistem dapat mengelola inventaris kantin, melacak item makanan dan bahan-bahan.
 
 ## Utils / Tech Stacks
