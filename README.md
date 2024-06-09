@@ -1,6 +1,9 @@
 # QuickCanteen
 Proyek manajemen database ini bertujuan untuk menghilangkan antrian panjang, menghemat waktu mahasiswa antar kelas atau saat istirahat. Mengembangkan situs web kantin kampus yang ramah pengguna yang memungkinkan mahasiswa memesan makanan secara online dimanapun dan mengambilnya dengan nyaman tanpa perlu mengantri lama-lama.
 
+## Web Overview
+![image](https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-/assets/144346489/10529c75-7905-422d-b78f-59f74a749ec8)
+
 ## Features
   * Pemesanan dan Pembayaran: Interface yang ramah pengguna memungkinkan siswa memesan dan membayar makanan mereka menggunakan gateway pembayaran terintegrasi.
   * Pelacakan Pesanan: Mahasiswa (user) dapat melacak status pesanan mereka secara real-time, memungkinkan mereka tiba di kantin tepat ketika makanan sudah siap.
