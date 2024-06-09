@@ -3,7 +3,7 @@ USE APP;
 
 CREATE TYPE public.OrderStatus AS ENUM ('placed', 'paid', 'inProgress', 'outForDelivery', 'delivered');
 
-CREATE TYPE public.Cluster AS ENUM ('Saintek', 'Soshum');
+CREATE TYPE public.Cluster AS ENUM ('Science', 'Social');
 
 CREATE TYPE public.cuisines AS ENUM ('Indonesian', 'BBQ', 'Breakfast', 'Burgers', 'Cafe', 'Batagor', 'Desserts', 'Siomay', 'Bakmi', 'Healthy', 'Curry', 'Chicken Katsu', 'Ice Cream', 'Soto', 'Noodles', 'Organic', 'Pasta', 'Pizza', 'Salads', 'Seafood', 'Beef', 'Sushi', 'Beverages', 'Drinks', 'Kebab');
 --membuat tabel user
