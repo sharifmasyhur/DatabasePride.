@@ -12,9 +12,9 @@ const register = async (req, res) => {
       }
       return res.json(result.rows);
     });
-  };
+};
 
-  const login = async (req, res) => {
+const login = async (req, res) => {
     const { userEmail, password } = req.body;
     const q = "SELECT * FROM account WHERE userEmail = $1 AND password = $2";
     const values = [userEmail, password];
@@ -38,9 +38,9 @@ const register = async (req, res) => {
       }
       return res.json(result.rows);
     });
-  };
+};
 
-  const canteen =  (req, res) => {
+const canteen =  (req, res) => {
     const canteenId = req.params.id;
     const q = "SELECT * FROM menu WHERE canteenId = $1";
     pool.query(q, [canteenId], (err, result) => {
@@ -50,9 +50,9 @@ const register = async (req, res) => {
       }
       return res.json(result.rows);
     });
-  };
+};
 
-  const order = async (req, res) => {
+const order = async (req, res) => {
     const { userEmail } = req.body;
     const q = "SELECT * FROM orders WHERE userEmail = $1";
     const values = [userEmail];
@@ -64,8 +64,23 @@ const register = async (req, res) => {
       }
       return res.json(result.rows);
     });
-  };
+};
 
+
+const updateUser (req, res) => {
+  const userId = req.params.id;
+  const { name, npm, faculty, cluster } = req.body;
+  const q = "UPDATE users SET name = $1, npm = $2, faculty = $3, cluster = $4 WHERE userId = $5";
+  const values = [name, npm, faculty, cluster, userId];
+
+  pool.query(q, values, (err, result) => {
+    if (err) {
+      console.error("Error executing query", err.stack);
+      return res.status(500).json(err);
+    }
+    return res.json(result.rows);
+  });
+});
   
 
 
