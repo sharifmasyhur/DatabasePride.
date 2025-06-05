@@ -53,7 +53,3 @@ npm run dev
 ![UML_QuickCanteen](https://github.com/SistemBasisData2024/Kel-10-QuickCanteen-/assets/144346489/5b2a41ce-096b-42f6-aecd-28620b1e18c8)
 
 
-## Contributors
-- Raditya Akhila Ganapati
-- Sharif Fatih Asad Masyhur
-- Rain Elgratio Sion Hasian Lumban Gaol
